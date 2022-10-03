@@ -25,7 +25,7 @@ class LetterListFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -63,8 +63,8 @@ class LetterListFragment : Fragment() {
             return
         menuItem.icon =
             if(isLinearLayoutManager)
-                ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_grid_layout)
-            else ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_linear_layout)
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_grid_layout)
+            else ContextCompat.getDrawable(requireContext(), R.drawable.ic_linear_layout)
     }
 
     @Deprecated("Deprecated in Java")
