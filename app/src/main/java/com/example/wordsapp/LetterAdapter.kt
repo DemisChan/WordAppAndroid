@@ -24,6 +24,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wordsapp.WordListFragment.Companion.LETTER
 
 /**
  * Adapter for the [RecyclerView] in [MainActivity].
@@ -61,14 +62,14 @@ class LetterAdapter :
      * Replaces the content of an existing view with new data
      */
     override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
-        val item = list.get(position)
+        val item = list[position]
         holder.button.text = item.toString()
 
         //Completed: create explicit intent
         holder.button.setOnClickListener {
             val context = holder.view.context
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())
+            val intent = Intent(context, WordListFragment::class.java)
+            intent.putExtra(LETTER, holder.button.text.toString())
             context.startActivity(intent)
         }
     }
