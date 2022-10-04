@@ -10,6 +10,7 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -30,5 +31,7 @@ class NavigationTests {
         onView(withId(R.id.recycler_view))
             .perform(RecyclerViewActions
                 .actionOnItemAtPosition<RecyclerView.ViewHolder>(2, click()))
+
+        assertEquals(navController.currentDestination?.id, R.id.wordListFragment)
     }
 }
