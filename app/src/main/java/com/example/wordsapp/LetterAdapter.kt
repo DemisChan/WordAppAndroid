@@ -64,7 +64,7 @@ class LetterAdapter :
         val item = list[position]
         holder.button.text = item.toString()
 
-        //Completed: create explicit intent
+        //Completed: fragment action
         holder.button.setOnClickListener {
             val action =
                 LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
